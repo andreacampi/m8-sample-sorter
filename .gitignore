@@ -1,2 +1,5 @@
 .*.sw?
+bazel-bin
+bazel-out
+bazel-testlogs
 tools/tools

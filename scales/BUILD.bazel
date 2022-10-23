@@ -1,0 +1,10 @@
+load(":data.bzl", "scales")
+load(":rules.bzl", "copy_m8n_file")
+
+
+[
+    copy_m8n_file(
+        name = scale,
+        input_dir = "/Users/andreacampi/Music/M8/M8_Community_SD-card_Starter_Pack/Scales/Factory",
+    ) for scale in scales
+]
