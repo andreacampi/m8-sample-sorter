@@ -4,5 +4,6 @@ samples(
     name = "Cymbal",
     data = [
         "@a808_from_mars//:Cymbal",
+        "@acoustic_funk_vol_1//:Cymbal",
     ],
 )

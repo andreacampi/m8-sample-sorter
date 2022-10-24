@@ -4,5 +4,7 @@ samples(
     name = "BD",
     data = [
         "@a808_from_mars//:BD",
+        "@acoustic_funk_vol_1//:BD",
+        "@tom_ferry_uk_house//:BD",
     ],
 )

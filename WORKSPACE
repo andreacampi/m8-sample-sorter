@@ -10,6 +10,8 @@ http_archive(
 load("@bazel_skylib//:workspace.bzl", "bazel_skylib_workspace")
 bazel_skylib_workspace()
 
+# TODO 3AM entire phrases
+
 # 808 From Mars
 # High quality, multi-format pack. We are only using the WAV directory.
 # XXX we're not using the "02. Kits" directory because some filenames are duplicate.
@@ -83,6 +85,138 @@ filegroup(
     name = "CH",
     srcs = glob([
         "01. Individual Hits/16. Closed HH/**/*.wav",
+    ]),
+)
+"""
+)
+
+# TODO 909 from Mars
+
+# Acoustic Funk Vol 1 from Producer Loops (via HumbleBundle)
+# We only use one-shots.
+# TODO maybe synths and risers
+new_local_repository(
+    name = "acoustic_funk_vol_1",
+    path = "/Users/andreacampi/Music/Samples/Acoustic Funk Vol 1",
+    build_file_content = """
+package(default_visibility = ["//visibility:public"])
+filegroup(
+    name = "BD",
+    srcs = glob([
+        "One Shots/Drums/AFV1_Drums_Kick*.wav",
+    ]),
+)
+filegroup(
+    name = "SD",
+    srcs = glob([
+        "One Shots/Drums/AFV1_Drums_Snare*.wav",
+    ]),
+)
+filegroup(
+    name = "Tom",
+    srcs = glob([
+        "One Shots/Drums/AFV1_Drums_FTom*.wav",
+        "One Shots/Drums/AFV1_Drums_RTom*.wav",
+    ]),
+)
+filegroup(
+    name = "Cymbal",
+    srcs = glob([
+        "One Shots/Drums/AFV1_Drums_Crash*.wav",
+        "One Shots/Drums/AFV1_Drums_Ride*.wav",
+    ]),
+)
+filegroup(
+    name = "OH",
+    srcs = glob([
+        "One Shots/Drums/AFV1_Drums_HH6.wav",
+        "One Shots/Drums/AFV1_Drums_HH7.wav",
+        "One Shots/Drums/AFV1_Drums_HH8.wav",
+        "One Shots/Drums/AFV1_Drums_HH9.wav",
+    ]),
+)
+filegroup(
+    name = "CH",
+    srcs = glob([
+        "One Shots/Drums/AFV1_Drums_HH1.wav",
+        "One Shots/Drums/AFV1_Drums_HH2.wav",
+        "One Shots/Drums/AFV1_Drums_HH3.wav",
+        "One Shots/Drums/AFV1_Drums_HH4.wav",
+        "One Shots/Drums/AFV1_Drums_HH5.wav",
+    ]),
+)
+"""
+)
+
+# TODO Bliss
+
+# TODO Calculate
+
+# TODO Chill Trap & Melodic RnB – good vocals
+
+# TODO CIMMERIUS
+
+# TODO Cinematic
+
+# TODO Dark Realm Horror FX
+
+# TODO Darksynth & Cyberpunk 
+
+# TODO Disco Pimp 
+
+# TODO Epic Cinematic Anthems Kit 
+
+# TODO Essence of Analogue Vol 1 - House
+
+# TODO Essence of Analogue Vol 2 - Cinematic Synthwave
+
+# TODO Essence of Analogue Vol 3 - Ambient Odyssey
+
+# TODO Essential WAV From Mars - 16bit
+
+# TODO FEM sample pack
+
+# Tom Ferry - UK House from Loopmasters
+# House, Deep House, UK House, Dance, Pop, EDM
+# It also has drum loops which we don't use
+# TODO loads of synths and some risers/FX
+new_local_repository(
+    name = "tom_ferry_uk_house",
+    path = "/Users/andreacampi/Music/Samples/Tom Ferry - UK House/Samples",
+    build_file_content = """
+package(default_visibility = ["//visibility:public"])
+filegroup(
+    name = "claps",
+    srcs = glob([
+        "Loops/Clap Loops/**/*.wav",
+    ]),
+)
+filegroup(
+    name = "pad_loops",
+    srcs = glob([
+        "Loops/Music Loops/**/*.wav",
+    ]),
+)
+filegroup(
+    name = "BD",
+    srcs = glob([
+        "One Shots/Kicks/*.wav",
+    ]),
+)
+"""
+)
+
+# Vocal stems
+# Various vocal stems, bought from misc sites
+new_local_repository(
+    name = "vocal_stems",
+    path = "/Users/andreacampi/Music/Samples/Vocal stems",
+    build_file_content = """
+package(default_visibility = ["//visibility:public"])
+filegroup(
+    name = "vocal_stems",
+    srcs = glob([
+        "**/*.wav",
     ]),
 )
 """

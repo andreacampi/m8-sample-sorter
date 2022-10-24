@@ -4,5 +4,6 @@ samples(
     name = "Clap",
     data = [
         "@a808_from_mars//:Clap",
+        "@tom_ferry_uk_house//:claps",
     ],
 )
