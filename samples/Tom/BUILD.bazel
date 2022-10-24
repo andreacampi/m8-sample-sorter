@@ -1,0 +1,8 @@
+load("//samples:rules.bzl", "samples")
+
+samples(
+    name = "Tom",
+    data = [
+        "@a808_from_mars//:Tom",
+    ],
+)
