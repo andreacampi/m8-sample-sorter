@@ -9,3 +9,19 @@ http_archive(
 )
 load("@bazel_skylib//:workspace.bzl", "bazel_skylib_workspace")
 bazel_skylib_workspace()
+
+# 808 From Mars
+# High quality, multi-format pack. We are only using the WAV directory.
+new_local_repository(
+    name = "a808_from_mars",
+    path = "/Users/andreacampi/Music/Samples/808 From Mars/WAV",
+    build_file_content = """
+package(default_visibility = ["//visibility:public"])
+filegroup(
+    name = "BD",
+    srcs = glob([
+        "01. Individual Hits/01. Bass Drum/Clean/Digital/A/*.wav"
+    ]),
+)
+"""
+)
