@@ -31,7 +31,7 @@ type m8processor func(ctx Ctx, path string) error
 func main() {
 	// log.SetLevel(log.DebugLevel) // FIXME use a flag
 
-	packs, err := Load("data/packs.yaml")
+	packs, err := Load("../data/packs.yaml")
 	if err != nil {
 		log.Fatalf("loading packs: %v", err)
 	}
@@ -54,7 +54,7 @@ func main() {
 func Load(path string) ([]Pack, error) {
 	var packs []Pack
 
-	in, err := os.Open("data/packs.yaml")
+	in, err := os.Open(path)
 	if err != nil {
 		return packs, fmt.Errorf("opening input file: %v", err)
 	}
@@ -186,12 +186,14 @@ func wavProcessor(ctx Ctx, path string) error {
 
 	log.Infof("%s metadata: %#v duration: %s", path, d.Metadata, dur)
 
-	base := filepath.Base(path)
-	target := filepath.Join(ctx.Curpath, base)
-	err = os.Symlink(path, target)
-	if err != nil {
-		return fmt.Errorf("creating symlink %s -> %s: %v", target, path, err)
-	}
+	/*
+		base := filepath.Base(path)
+		target := filepath.Join(ctx.Curpath, base)
+		err = os.Symlink(path, target)
+		if err != nil {
+			return fmt.Errorf("creating symlink %s -> %s: %v", target, path, err)
+		}
+	*/
 
 	return nil
 }
