@@ -1,5 +1,6 @@
 load(":data.bzl", "scales")
 load(":rules.bzl", "copy_m8n_file")
+load("@rules_pkg//pkg:mappings.bzl", "pkg_attributes", "pkg_filegroup", "pkg_files", "pkg_mkdirs", "strip_prefix")
 
 [
     copy_m8n_file(
@@ -7,3 +8,13 @@ load(":rules.bzl", "copy_m8n_file")
         input_dir = "/Users/andreacampi/Music/M8/M8_Community_SD-card_Starter_Pack/Scales/Factory",
     ) for scale in scales
 ]
+
+pkg_files(
+    name = "pkgfiles",
+    visibility = ["//visibility:public"],
+    srcs = [
+        ":%s" % scale for scale in scales
+    ],
+    prefix = "Scales/",
+    strip_prefix = "",
+)

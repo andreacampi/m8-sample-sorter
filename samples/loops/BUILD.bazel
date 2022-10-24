@@ -4,9 +4,7 @@ pkg_filegroup(
     name = "pkgfiles",
     visibility = ["//visibility:public"],
     srcs = [
-        "//samples/drums:pkgfiles",
-        "//samples/loops:pkgfiles",
-        "//samples/vocals:pkgfiles",
+        "//samples/loops/pads:pkgfiles",
     ],
-    prefix = "Samples",
+    prefix = "Loops",
 )

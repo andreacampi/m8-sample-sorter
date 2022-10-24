@@ -1,0 +1,19 @@
+load("//samples:rules.bzl", "samples")
+load("@rules_pkg//pkg:mappings.bzl", "pkg_files")
+
+samples(
+    name = "pads",
+    data = [
+        "@tom_ferry_uk_house//:pad_loops",
+    ],
+)
+
+pkg_files(
+    name = "pkgfiles",
+    visibility = ["//visibility:public"],
+    srcs = [
+        ":pads",
+    ],
+    prefix = "Pads",
+    strip_prefix = "",
+)

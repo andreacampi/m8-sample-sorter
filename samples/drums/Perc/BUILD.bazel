@@ -1,0 +1,19 @@
+load("//samples:rules.bzl", "samples")
+load("@rules_pkg//pkg:mappings.bzl", "pkg_files")
+
+samples(
+    name = "Perc",
+    data = [
+        "@a808_from_mars//:Perc",
+    ],
+)
+
+pkg_files(
+    name = "pkgfiles",
+    visibility = ["//visibility:public"],
+    srcs = [
+        ":Perc",
+    ],
+    prefix = "Perc",
+    strip_prefix = "",
+)

@@ -1,0 +1,19 @@
+load("@rules_pkg//pkg:mappings.bzl", "pkg_filegroup")
+
+pkg_filegroup(
+    name = "pkgfiles",
+    visibility = ["//visibility:public"],
+    srcs = [
+        "//samples/drums/BD:pkgfiles",
+        "//samples/drums/CH:pkgfiles",
+        "//samples/drums/Clap:pkgfiles",
+        "//samples/drums/Cowbell:pkgfiles",
+        "//samples/drums/Cymbal:pkgfiles",
+        "//samples/drums/OH:pkgfiles",
+        "//samples/drums/Perc:pkgfiles",
+        "//samples/drums/Rim:pkgfiles",
+        "//samples/drums/SD:pkgfiles",
+        "//samples/drums/Tom:pkgfiles",
+    ],
+    prefix = "Drums",
+)

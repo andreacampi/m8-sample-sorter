@@ -1,0 +1,19 @@
+load("//samples:rules.bzl", "samples")
+load("@rules_pkg//pkg:mappings.bzl", "pkg_files")
+
+samples(
+    name = "Cowbell",
+    data = [
+        "@a808_from_mars//:Cowbell",
+    ],
+)
+
+pkg_files(
+    name = "pkgfiles",
+    visibility = ["//visibility:public"],
+    srcs = [
+        ":Cowbell",
+    ],
+    prefix = "Cowbell",
+    strip_prefix = "",
+)

@@ -1,0 +1,20 @@
+load("//samples:rules.bzl", "samples")
+load("@rules_pkg//pkg:mappings.bzl", "pkg_files")
+
+samples(
+    name = "Clap",
+    data = [
+        "@a808_from_mars//:Clap",
+        "@tom_ferry_uk_house//:claps",
+    ],
+)
+
+pkg_files(
+    name = "pkgfiles",
+    visibility = ["//visibility:public"],
+    srcs = [
+        ":Clap",
+    ],
+    prefix = "Clap",
+    strip_prefix = "",
+)

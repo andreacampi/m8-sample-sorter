@@ -1,8 +1,0 @@
-load("//samples:rules.bzl", "samples")
-
-samples(
-    name = "Stems",
-    data = [
-        "@vocal_stems//:vocal_stems",
-    ],
-)

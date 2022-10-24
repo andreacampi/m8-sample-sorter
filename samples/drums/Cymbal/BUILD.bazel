@@ -1,0 +1,20 @@
+load("//samples:rules.bzl", "samples")
+load("@rules_pkg//pkg:mappings.bzl", "pkg_files")
+
+samples(
+    name = "Cymbal",
+    data = [
+        "@a808_from_mars//:Cymbal",
+        "@acoustic_funk_vol_1//:Cymbal",
+    ],
+)
+
+pkg_files(
+    name = "pkgfiles",
+    visibility = ["//visibility:public"],
+    srcs = [
+        ":Cymbal",
+    ],
+    prefix = "Cymbal",
+    strip_prefix = "",
+)

@@ -1,0 +1,19 @@
+load("//samples:rules.bzl", "samples")
+load("@rules_pkg//pkg:mappings.bzl", "pkg_files")
+
+samples(
+    name = "stems",
+    data = [
+        "@vocal_stems//:vocal_stems",
+    ],
+)
+
+pkg_files(
+    name = "pkgfiles",
+    visibility = ["//visibility:public"],
+    srcs = [
+        ":stems",
+    ],
+    prefix = "Stems",
+    strip_prefix = "",
+)

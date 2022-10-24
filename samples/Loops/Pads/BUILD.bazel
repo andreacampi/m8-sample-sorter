@@ -1,8 +1,0 @@
-load("//samples:rules.bzl", "samples")
-
-samples(
-    name = "Pads",
-    data = [
-        "@tom_ferry_uk_house//:pad_loops",
-    ],
-)

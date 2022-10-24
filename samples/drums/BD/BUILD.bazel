@@ -1,0 +1,21 @@
+load("//samples:rules.bzl", "samples")
+load("@rules_pkg//pkg:mappings.bzl", "pkg_files")
+
+samples(
+    name = "BD",
+    data = [
+        "@a808_from_mars//:BD",
+        "@acoustic_funk_vol_1//:BD",
+        "@tom_ferry_uk_house//:BD",
+    ],
+)
+
+pkg_files(
+    name = "pkgfiles",
+    visibility = ["//visibility:public"],
+    srcs = [
+        ":BD",
+    ],
+    prefix = "BD",
+    strip_prefix = "",
+)

@@ -1,8 +1,0 @@
-load("//samples:rules.bzl", "samples")
-
-samples(
-    name = "Rim",
-    data = [
-        "@a808_from_mars//:Rim",
-    ],
-)
