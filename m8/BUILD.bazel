@@ -19,7 +19,10 @@ pkg_tar(
     name = "image",
     srcs = [
         ":hierarchy",
+        "//bundles:pkgfiles",
+        "//instruments:pkgfiles",
         "//scales:pkgfiles",
         "//samples:pkgfiles",
+        "//themes:pkgfiles",
     ],
 )

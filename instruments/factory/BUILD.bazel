@@ -1,0 +1,11 @@
+load("@rules_pkg//pkg:mappings.bzl", "pkg_files")
+
+pkg_files(
+    name = "pkgfiles",
+    visibility = ["//visibility:public"],
+    srcs = [
+        "@m8_community_sd_card_starter_pack//:instruments",
+    ],
+    prefix = "Factory",
+    strip_prefix = "Instruments",
+)

@@ -21,6 +21,41 @@ http_archive(
 load("@rules_pkg//:deps.bzl", "rules_pkg_dependencies")
 rules_pkg_dependencies()
 
+#
+# Community "factory" image
+#
+new_local_repository(
+    name = "m8_community_sd_card_starter_pack",
+    path = "/Users/andreacampi/Music/Packs/M8/M8_Community_SD-card_Starter_Pack",
+    build_file_content = """
+package(default_visibility = ["//visibility:public"])
+filegroup(
+    name = "bundles",
+    srcs = glob([
+        "Bundles/**/*",
+    ]),
+)
+filegroup(
+    name = "instruments",
+    srcs = glob([
+        "Instruments/**/*.m8i",
+    ]),
+)
+filegroup(
+    name = "scales",
+    srcs = glob([
+        "Scales/**/*.m8n",
+    ]),
+)
+filegroup(
+    name = "themes",
+    srcs = glob([
+        "Themes/**/*.m8t",
+    ]),
+)
+"""
+)
+
 # TODO 3AM entire phrases
 
 # 808 From Mars
