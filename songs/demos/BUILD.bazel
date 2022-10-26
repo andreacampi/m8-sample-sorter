@@ -1,0 +1,11 @@
+load("@rules_pkg//pkg:mappings.bzl", "pkg_files")
+
+pkg_files(
+    name = "pkgfiles",
+    visibility = ["//visibility:public"],
+    srcs = [
+        "@trash80_synthdrums//:demo",
+    ],
+    prefix = "Demos",
+    strip_prefix = "",
+)

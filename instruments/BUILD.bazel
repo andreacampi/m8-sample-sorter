@@ -1,9 +1,20 @@
-load("@rules_pkg//pkg:mappings.bzl", "pkg_filegroup")
+load("@rules_pkg//pkg:mappings.bzl", "pkg_filegroup", "pkg_files")
+
+pkg_files(
+    name = "files",
+    visibility = ["//visibility:public"],
+    srcs = [
+        "@trash80_synthdrums//:instruments",
+    ],
+    prefix = "",
+    strip_prefix = "",
+)
 
 pkg_filegroup(
     name = "pkgfiles",
     visibility = ["//visibility:public"],
     srcs = [
+        ":files",
         "//instruments/factory:pkgfiles",
     ],
     prefix = "Instruments",

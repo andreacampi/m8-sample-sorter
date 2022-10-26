@@ -21,8 +21,9 @@ pkg_tar(
         ":hierarchy",
         "//bundles:pkgfiles",
         "//instruments:pkgfiles",
-        "//scales:pkgfiles",
         "//samples:pkgfiles",
+        "//scales:pkgfiles",
+        "//songs:pkgfiles",
         "//themes:pkgfiles",
     ],
 )

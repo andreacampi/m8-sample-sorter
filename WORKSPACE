@@ -56,6 +56,29 @@ filegroup(
 """
 )
 
+#
+# Trash80 synthdrums
+#
+new_local_repository(
+    name = "trash80_synthdrums",
+    path = "/Users/andreacampi/Music/Packs/M8/Trash80 Synthdrums/Trash80 Synthdrums",
+    build_file_content = """
+package(default_visibility = ["//visibility:public"])
+filegroup(
+    name = "instruments",
+    srcs = glob([
+        "*.m8i",
+    ]),
+)
+filegroup(
+    name = "demo",
+    srcs = glob([
+        "Synthdrums_DEMO.m8s"
+    ]),
+)
+"""
+)
+
 # TODO 3AM entire phrases
 
 # 808 From Mars
